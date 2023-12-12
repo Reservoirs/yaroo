@@ -1,3 +1,4 @@
+#%%writefile extract.py
 from functools import partial
 from pathlib import Path
 from typing import Optional, Tuple
@@ -73,21 +74,12 @@ def extract_features(
     for i, (images, files, indices) in enumerate(pbar):
         output_dict = {}
 
-        '''
-        B, C, H, W = images.shape
-        H = int(H*0.7); W = int(W*0.7)
-        
-        #print('1',images.shape)
-        images = images.permute(2,3,1,0).detach().numpy()
-        images = cv2.resize(images[:,:,:,0], (W, H), interpolation=cv2.INTER_NEAREST)
-        #print('2',images.shape)
-        images = torch.from_numpy(images)
-        images = images.permute(2,0,1).unsqueeze(0)
-        '''
-        
+        folder = str(files).split('/')[-2]
+        #print('folder',folder)
         # Check if file already exists
         id = Path(files[0]).stem
-        output_file = Path(output_dir) / f'{id}.pth'
+        output_file = str(output_dir)+'/'+folder+'_'+str(id)+'.pth'
+        output_file = Path(output_file)
         if output_file.is_file():
             pbar.write(f'Skipping existing file {str(output_file)}')
             continue
