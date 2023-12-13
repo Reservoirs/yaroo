@@ -6,10 +6,10 @@ import time
 from sklearn.cluster import DBSCAN
 import numpy as np
 from scipy.optimize import linear_sum_assignment
-from pycocotools import mask as maskUtils
-from pycocotools.coco import COCO
+#from pycocotools import mask as maskUtils
+#from pycocotools.coco import COCO
 import json
-from pycocotools import mask as masktools
+#from pycocotools import mask as masktools
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
