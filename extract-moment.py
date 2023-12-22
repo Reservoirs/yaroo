@@ -1,3 +1,5 @@
+%%writefile extract-moment.py
+
 from functools import partial
 from pathlib import Path
 from typing import Optional, Tuple
@@ -307,15 +309,21 @@ def _extract_eig(
     #if './' + str(features_file) in allpath:
 
     # Load 
+    
+    
+
     data_dict = torch.load(features_file, map_location='cpu')
     image_id = data_dict['file'][:-4]
 
+    output_file = str(output_dir) + str(features_file).split('/')[-1]
     # Load
-    output_file = str(Path(output_dir) / f'{image_id}.pth')
+    #output_file = str(Path(output_dir) / f'{image_id}.pth')
     if Path(output_file).is_file():
         print('Skipping existing file',str(output_file))
         return  # skip because already generated
-
+    
+    #print('\n output_file',output_file)
+    
     # Load affinity matrix
     feats = data_dict[which_features].squeeze()#.cuda()
     if normalize:
@@ -388,6 +396,8 @@ def _extract_eig(
             #path = 'data/VOC2012/ytb_images_train/0693719753_00050.jpg'
 
             gray_image = cv2.imread(image_file,0);
+            
+            #print('\n @@@@@@@@@@@@@@@',image_file,gray_image.shape)
 
             num_rows = gray_image.shape[0] // patch_size
             num_cols = gray_image.shape[1] // patch_size
