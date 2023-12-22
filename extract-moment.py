@@ -279,7 +279,7 @@ def local_std(gray_image):
     return std_heatmap
 
 allpath = []
-with open('/home/user01/unsupervised/deep-spectral-segmentation/extract/10k.txt','r') as f:
+with open('10k.txt','r') as f:
     tf = f.readlines()
 for a in tf:
     b = a.replace('/home/user01/train/AnnTrue/','./data/VOC2012/features_train/dino_vits16/').replace('.png\n','.pth')
