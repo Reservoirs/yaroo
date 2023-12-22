@@ -1,4 +1,4 @@
-%%writefile extract-moment.py
+#%%writefile extract-moment.py
 
 from functools import partial
 from pathlib import Path
