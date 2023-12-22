@@ -411,9 +411,9 @@ def _extract_eig(
                 resmom = calculate_std(patches,num_rows,num_cols)
             elif moment=='skew':
                 resmom = calculate_skewness(patches,num_rows,num_cols)
-            elif mean=='mean':
+            elif moment=='mean':
                 resmom = calculate_mean(patches,num_rows,num_cols)
-            elif entropy=='ent':
+            elif moment=='ent':
                 resmom = calculate_entropy(patches,num_rows,num_cols)
 
             #print('############ image_lr',image_lr.shape)
