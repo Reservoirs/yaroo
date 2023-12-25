@@ -317,7 +317,7 @@ def _extract_eig(
         return  # skip because already generated
 
     # Load affinity matrix
-    feats = data_dict[which_features].squeeze().cuda()
+    feats = data_dict[which_features].squeeze()#.cuda()
     if normalize:
         feats = F.normalize(feats, p=2, dim=-1)
 
