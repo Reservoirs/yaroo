@@ -310,8 +310,9 @@ def _extract_eig(
     data_dict = torch.load(features_file, map_location='cpu')
     image_id = data_dict['file'][:-4]
 
+    output_file = str(output_dir) + str(features_file).split('/')[-1]
     # Load
-    output_file = str(Path(output_dir) / f'{image_id}.pth')
+    #output_file = str(Path(output_dir) / f'{image_id}.pth')
     if Path(output_file).is_file():
         print('Skipping existing file',str(output_file))
         return  # skip because already generated
