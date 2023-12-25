@@ -410,11 +410,11 @@ def _extract_eig(
                 resmom1 = calculate_skewness(patches1,num_rows,num_cols)
                 resmom2 = calculate_skewness(patches2,num_rows,num_cols)
                 resmom3 = calculate_skewness(patches3,num_rows,num_cols)
-            elif mean=='mean':
+            elif moment=='mean':
                 resmom1 = calculate_mean(patches1,num_rows,num_cols)
                 resmom2 = calculate_mean(patches2,num_rows,num_cols)
                 resmom3 = calculate_mean(patches3,num_rows,num_cols)
-            elif entropy=='ent':
+            elif moment=='ent':
                 resmom1 = calculate_entropy(patches1,num_rows,num_cols)
                 resmom2 = calculate_entropy(patches2,num_rows,num_cols)
                 resmom3 = calculate_entropy(patches3,num_rows,num_cols)
