@@ -302,7 +302,8 @@ def _extract_eig(
     threshold_at_zero: bool = True,
     image_downsample_factor: Optional[int] = None,
     image_color_lambda: float = 10,
-    moment: str = 'skew',feat_lambda = 1
+    moment: str = 'skew',
+    feat_lambda: float = 1
 ):
     index, features_file = inp
 
@@ -484,7 +485,8 @@ def extract_eigs(
     image_downsample_factor: Optional[int] = None,
     image_color_lambda: float = 0.0,
     multiprocessing: int = 0,
-    moment: str = 'skew', feat_lambda: float = 1.0
+    moment: str = 'skew', 
+    feat_lambda: float = 1.0
 ):
     """
     Extracts eigenvalues from features.
