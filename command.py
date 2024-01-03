@@ -497,8 +497,8 @@ import sys
 
 if __name__ == "__main__":
     import pickle
-    print(sys.argv[0])
-    with open(sys.argv[0], 'rb') as fp:
+    #print(sys.argv[0])
+    with open(sys.argv[1], 'rb') as fp:
         f = pickle.load(fp)
     [arg1, arg2, arg3, arg4, arg5] = f
     do_sp_metric_pair_moment(arg1, arg2, arg3, arg4, arg5)
