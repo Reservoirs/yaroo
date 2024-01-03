@@ -500,9 +500,18 @@ if __name__ == "__main__":
     if len(sys.argv) != 6:
         print("Usage: python test.py arg1 arg2 arg3 arg4 arg5")
     else:
-        arg1 = sys.argv[1]
-        arg2 = sys.argv[2]
-        arg3 = sys.argv[3]
+        print(type(sys.argv[1]))
+        # Parse torch.Tensor from command line argument
+        arg1 = torch.tensor(float(sys.argv[1]))  # assuming the argument is a float value
+
+        # Parse numpy.ndarray from command line argument
+        arg2 = np.array(eval(sys.argv[2]))  # assuming the argument is a valid list or array literal
+
+        # Parse float value from command line argument
+        arg3 = float(sys.argv[3])
+        
+        #arg2 = sys.argv[2]
+        #arg3 = sys.argv[3]
         arg4 = sys.argv[4]
         arg5 = sys.argv[5]
         do_sp_metric_pair_moment(arg1, arg2, arg3, arg4, arg5)
