@@ -322,7 +322,7 @@ def do_sp_metric_pair(feats_sep):
 
 def do_sp_metric_pair_moment(feats_sep,W_moment,alpha,out,title):
     
-    feats_sep = feats_sep.cpu().numpy()
+    #feats_sep = feats_sep.cpu().numpy()
     eigs={}
     
     #distance_metric=['normal','chebyshev','braycurtis','manhattan','cityblock','canberra','correlation','cosine','l2','l1','mahalanobis']
