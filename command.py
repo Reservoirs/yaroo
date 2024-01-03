@@ -368,7 +368,7 @@ def do_sp_metric_pair_moment(feats_sep,W_moment,alpha,out,title):
         #eigenvalues=[];eigenvectors=[];
         u+=1;
     output={}
-    output.update({title:[eigenvaluesx, eigenvectorsx ]})
+    output.update({title:[eigenvalues, eigenvectors]})
     with open(out, 'wb') as fp:
       pickle.dump(output, fp)
 
