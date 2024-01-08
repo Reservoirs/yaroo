@@ -343,10 +343,10 @@ def do_sp_metric_pair(feats_sep,out):
         u+=1;
         
    
-    output={}
-    output.update({'div1_braycurtis_chebyshev':eigs})
+    #output={}
+    #output.update({'div1_braycurtis_chebyshev':eigs})
     with open(out, 'wb') as fp:
-      pickle.dump(output, fp)
+      pickle.dump(eigs, fp)
 
 
 
