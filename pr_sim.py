@@ -324,7 +324,11 @@ def do_sp_metric_pair(feats_sep,out):
 
 
 
-    
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+from skimage.measure import shannon_entropy
+from scipy.stats import kurtosis,skew   
 import sys
 
 
